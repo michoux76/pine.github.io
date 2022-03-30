@@ -1,14 +1,14 @@
 (function(){
-    width= 440;
-    height=550;
+    width= 100;
+    height=100;
     var page = document.createElement('span');
     page.style = `
-    position: relative;
+    position: fixed;
     overflow: hidden;
     display: block;
-    width: ${width}px;
-    height: ${height}px;
-    background: red;
+    width: ${width}vw;
+    height: ${height}vh;
+    background: rgb(0,255,0);
     `;
     imgs = [
         'pine.png',
