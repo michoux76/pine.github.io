@@ -28,8 +28,8 @@
         "https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_6e3bc2e7f97f43e2a35f95ec7c2b6a36/animated/light/3.0"
     ]
     var i = 0;
-    let time;
-    function addImg() {
+    var times = [];
+    function addImg(id) {
         var w = Math.round((Math.random()*105)-5);
         var h = Math.round((Math.random()*105)-5);
         var img = document.createElement('img');
@@ -38,9 +38,9 @@
         img.src = imgs[Math.round((i%(imgs.length - 1)))]
         page.appendChild(img);
         i=i+1;
-        time = setTimeout(addImg,1)
+        times[id] = setTimeout(addImg,500-i ? 500 - i : 0)
     }
-    time = setTimeout(addImg,1000)
+    for(var k = 0;k < imgs.length; k++){addImg(k)}
     document.style = document.body.style = 'margin: 0;padding: 0'
     document.body.appendChild(page)
 })()
